@@ -153,7 +153,7 @@ public class TaskRepository {
 	}
 public Task findById(int id) {
 		
-		String query = "SELECT j.id, j.name, p.name as project_name, u.fullname as user_name, DATE_FORMAT(j.startDate, '%d/%m/%Y') as startDate, DATE_FORMAT(j.endDate, '%d/%m/%Y') as endDate, s.name as status_name FROM Job AS j\r\n"
+		String query = "SELECT j.id, j.name, p.name as project_name, u.fullname as user_name, j.startDate, j.endDate, s.name as status_name FROM Job AS j\r\n"
 				+ "JOIN Users AS u ON j.id_user = u.id \r\n"
 				+ "JOIN Project AS p ON j.id_project = p.id\r\n"
 				+ "JOIN Status AS s ON j.id_status = s.id\r\n"
